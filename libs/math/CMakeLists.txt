@@ -51,24 +51,24 @@ install(DIRECTORY ${PUBLIC_HDR_DIR}/math DESTINATION include)
 # ==================================================================================================
 # Tests
 # ==================================================================================================
-add_executable(test_${TARGET}
-        tests/test_fast.cpp
-        tests/test_half.cpp
-        tests/test_mat.cpp
-        tests/test_vec.cpp
-        tests/test_quat.cpp
-)
-target_link_libraries(test_${TARGET} PRIVATE math gtest)
+# add_executable(test_${TARGET}
+#         tests/test_fast.cpp
+#         tests/test_half.cpp
+#         tests/test_mat.cpp
+#         tests/test_vec.cpp
+#         tests/test_quat.cpp
+# )
+# target_link_libraries(test_${TARGET} PRIVATE math gtest)
 
 # ==================================================================================================
 # Benchmarks
 # ==================================================================================================
 
-set(BENCHMARK_SRCS
-        benchmarks/benchmark_fast.cpp include/math/mathfwd.h)
+# set(BENCHMARK_SRCS
+#         benchmarks/benchmark_fast.cpp include/math/mathfwd.h)
 
-add_executable(benchmark_${TARGET} ${BENCHMARK_SRCS})
+# add_executable(benchmark_${TARGET} ${BENCHMARK_SRCS})
 
-target_compile_options(benchmark_${TARGET} PRIVATE ${OPTIMIZATION_FLAGS})
+# target_compile_options(benchmark_${TARGET} PRIVATE ${OPTIMIZATION_FLAGS})
 
-target_link_libraries(benchmark_${TARGET} PRIVATE benchmark_main utils math)
+# target_link_libraries(benchmark_${TARGET} PRIVATE benchmark_main utils math)
